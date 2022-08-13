@@ -69,20 +69,13 @@
 
         if (isset($_POST['btnEnvio'])){
                 
-            //echo $_FILES['arq1']['name'];
             $name = $_FILES['arq1']['name'];
-            // echo "<br><br>";
             
-            //echo $_FILES['arq1']['size'];
             $fileSize = $_FILES['arq1']['size'];
-            // echo "<br><br>";
             
-            //echo $_FILES['arq1']['tmp_name'];	
             $tmpName = $_FILES['arq1']['tmp_name'];
-            // echo "<br><br>";
             
             $ext = pathinfo($name, PATHINFO_EXTENSION);
-            // echo "<br><br>";
             
             $allowedExtensions = ['gif', 'pdf', 'png', 'jpg'];
 
