@@ -31,11 +31,28 @@
             display: block;
         }
 
+        .erro{
+            color: red;
+        }
+
     </style>
 
 </head>
 
 <body>
+
+    <p class="erro">
+        <?php
+            if (isset($_GET["erro"])){
+                if ($_GET["erro"] == 1){
+                    echo "Login e Senha inválidos";
+                }
+                if ($_GET["erro"] == 2){
+                    echo "Efetue o login para acessar essa página";
+                }
+            }
+        ?>
+    </p>
 
     <form action="verificaLogin.php" method="POST">
 

@@ -3,7 +3,7 @@
     $login = $_POST["usuario"];
     $senha = $_POST["senha"];
 
-    if ($login == "Allan" && $senha = "12345") {
+    if ($login == "Allan" && $senha == "12345") {
         session_start();
         $_SESSION["usuario"] = $login;
         $_SESSION["autenticado"] = true;
@@ -11,6 +11,5 @@
     } else {
         header("Location: login.php?erro=1");
     }
-    
 
 ?>
