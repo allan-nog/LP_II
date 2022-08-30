@@ -26,18 +26,7 @@
 
 <body onload="document.getElementById('id01').style.display='block'">
 
-    <p class="erro">
-        <?php
-            if (isset($_GET["erro"])){
-                if ($_GET["erro"] == 1){
-                    echo "Login e Senha inválidos";
-                }
-                if ($_GET["erro"] == 2){
-                    echo "Efetue o login para acessar essa página";
-                }
-            }
-        ?>
-    </p>
+    
 
     <div class="w3-container">
 
@@ -53,7 +42,21 @@
 
             <form action="verificaLogin.php" method="POST" class="w3-container">
 
+            
+
                 <div class="w3-section">
+                <p class="erro">
+                <?php
+                    if (isset($_GET["erro"])){
+                        if ($_GET["erro"] == 1){
+                            echo "Login e Senha inválidos";
+                        }
+                        if ($_GET["erro"] == 2){
+                            echo "Efetue o login para acessar essa página";
+                        }
+                    }
+                ?>
+            </p>
                 <label for="usuario"> <b>Username</b> </label>
                 <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usuario" id="usuario" required>
                 

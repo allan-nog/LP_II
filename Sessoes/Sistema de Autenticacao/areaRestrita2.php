@@ -18,15 +18,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
     <title> Area Restrita </title>
 
     <style>
 
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+
         a{
             text-decoration: underline;
             cursor: pointer;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .button{
+            padding: 10px 30px;
+            background-color: dodgerblue;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            display: block;
+            margin: 10px 0;
+        }
+        .w3-third {
+            margin-bottom: 20px;
         }
 
     </style>
@@ -34,13 +57,6 @@
 </head>
 
 <body class="w3-light-grey">
-
-    <!-- <p>
-        <?php
-            echo "Olá ". $_SESSION["usuario"]. "! Seja bem vindo!";
-        ?>
-        <a href="logoff.php"> [Sair] </a>
-    </p> -->
 
     <!-- Top container -->
     <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
@@ -52,7 +68,7 @@
     <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
     <div class="w3-container w3-row">
         <div class="w3-col s4">
-        <img src="imagens/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
+        <img src="imagens-avatar/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
         </div>
         <div class="w3-col s8 w3-bar">
         <span> Welcome, <strong> <?php echo $_SESSION["usuario"]; ?> </strong> </span> <br>
@@ -79,16 +95,18 @@
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
-   
+    <div class="w3-margin-left">
 
-    <div class="w3-container w3-teal">
-        <h1>Summer Holiday</h1>
+        <div class="w3-container w3-teal">
+            <h1> Álbum de fotos </h1>
+        </div>
+
+        <form action="areaRestrita2.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="arq1">
+            <input type="submit" name="btnEnvio" value="Enviar" class="button">
+        </form>
+
     </div>
-
-    <form action="photoAlbum.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="arq1">
-        <input type="submit" name="btnEnvio" value="Enviar" class="button">
-    </form>
 
     <?php
 
@@ -108,10 +126,10 @@
                 if (!file_exists("./imagens/".$name) ){
                     move_uploaded_file($tmpName, "./imagens/".$name);
                 } else{
-                    echo "Arquivo já existe no servidor!";
+                    echo "<p class='w3-margin-left'> Arquivo já existe no servidor! </p>";
                 }
             } else{
-                echo "Extensão de arquivo não permitida!!";
+                echo "<p class='w3-margin-left'> Extensão de arquivo não permitida!! </p>";
             }
             
         }
