@@ -101,7 +101,7 @@
             <h1> Álbum de fotos </h1>
         </div>
 
-        <form action="areaRestrita2.php" method="POST" enctype="multipart/form-data">
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
             <input type="file" name="arq1">
             <input type="submit" name="btnEnvio" value="Enviar" class="button">
         </form>
