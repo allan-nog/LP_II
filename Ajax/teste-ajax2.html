@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Teste de Ajax </title>
+
+    <script>
+
+        function buscarViaAjax() {
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState == 4){
+                    document.getElementById('content').innerHTML = ajax.responseText;
+                }
+            };
+
+            ajax.open("GET", "dados.txt");
+            ajax.send();
+        }
+
+        setInterval(buscarViaAjax, 500)
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="buscarViaAjax()"> Clique Aqui </button>
+
+    <div id="content"> </div>
+
+</body>
+
+</html>
