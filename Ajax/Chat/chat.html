@@ -25,6 +25,15 @@
             border-radius: 20px;
             display: block;
             margin: 10px 0;
+            cursor: pointer;
+        }
+
+        input{
+            padding: 5px;
+            font-family: 'Poppins', sans-serif;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
         }
 
     </style>
@@ -35,62 +44,15 @@
 
     <div id="content"> Conteúdo a Ser Alterado </div>
 
+    <label for="name"> Nome: </label>
     <input type="text" id="name" placeholder="Digite Seu Nome">
-    <input type="text" id="mensage">
+
+    <label for="mensage"> Mensagem: </label>
+    <input type="text" id="mensage" placeholder="Mensagem">
 
     <button onclick="gravarViaAjax()"> Enviar Dados </button>
 
-    <script>
-
-		//funcao para buscar dados de maneira assÃ­ncrona
-		function buscarViaAjax(){
-
-        var ajax = new XMLHttpRequest();
-
-        ajax.onreadystatechange = function(){
-
-            if( ajax.readyState == 4 ){
-                document.getElementById("content").innerHTML = ajax.responseText;
-            }
-
-        };
-
-        ajax.open("GET", "lerArquivo.php");
-        ajax.send();
-
-        }
-
-        setInterval( buscarViaAjax, 500);
-
-        //funcao para gravar dados de maneira assÃ­ncrona
-        function gravarViaAjax(){
-
-        // Conteudo do campo de mensagem eh armazenado na variavel 'texto'
-        texto = document.getElementById("mensage").value;
-        // Limpa o campo da mensagem
-        document.getElementById("mensage").value = "";
-
-        var ajax = new XMLHttpRequest();
-
-        // Concatena o conteudo da variavel 'texto' na chamada GET
-        ajax.open("GET", "gravarArquivo.php?msg=" + texto);
-        ajax.send();
-
-        }
-
-        var input = document.getElementById("mensage");
-
-        // Evento para verificar se o "ENTER" fora pressionado no elemento HTML
-        input.addEventListener("keyup", function(event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            if( input.value != "" )
-                gravarViaAjax();
-        }
-        });
-
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
