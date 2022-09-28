@@ -58,9 +58,51 @@
             border-right: 1px solid gray;
         }
 
+        .containerTwo{
+            padding-left: 20px;
+        }
+
+        .messages{
+            position: relative;
+            right: 0;
+            text-align: left;
+            padding: 5px 10px;
+            background-color: #202C33;
+            border-radius: 10px;
+            color: #FFF;
+        }
+
+        .messages p::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -12px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(225deg, #202C33 50%, transparent 50%, transparent);
+        }
+
+        .messages span{
+            display: block;
+            margin-top: 5px;
+            font-size: 0.85rem;
+            opacity: 0.5;
+            text-align: right;
+        }
+
         .error{
             color: red;
         }
+
+        .username{
+            color: dodgerblue !important;
+            display: block;
+            margin: 0;
+        }
+
+        .mensagem{
+            margin: 0;
+        } 
 
     </style>
 
@@ -71,28 +113,21 @@
     <main>
 
         <div class="container containerOne">
-    
             <form>
-
                 <label for="name"> Nome: </label>
                 <input type="text" id="name" placeholder="Digite Seu Nome">
         
                 <label for="mensage"> Mensagem: <span> *</span> </label>
                 <input type="text" id="mensage" placeholder="Mensagem">
-                <span id="error">  </span>
+                <span id="error"> </span>
         
                 <button onclick="gravarViaAjax()"> Enviar Dados </button>
-
             </form>
-
         </div>
 
-        <div class="container">
-
+        <div class="container containerTwo">
             <h3> Mensagens: </h3>
-
-            <p id="content"> </p>
-    
+            <div id="content"> <br> </div>
         </div>
     
     </main>

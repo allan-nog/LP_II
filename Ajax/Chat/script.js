@@ -20,8 +20,21 @@ setInterval(buscarViaAjax, 100);
 //funcao para gravar dados de maneira assí­ncrona
 function gravarViaAjax(){
 
+    var qtdMensagens = 0
+
+    var inputMensage = document.getElementById("mensage");
+
+    inputMensage.onclick = function() {
+        qtdMensagens++
+    }
+
+    inputMensage.enterKeyHint = function() {
+        qtdMensagens++
+    }
+
     mensagem = document.getElementById("mensage").value;
     nome = document.getElementById("name").value; 
+    
 
     if (mensagem == ""){
         document.getElementById("error").innerHTML = "Preencha a Mensagem";
@@ -35,7 +48,7 @@ function gravarViaAjax(){
 
         ajax.open("POST", "gravarArquivo.php");
         ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        ajax.send("msg=" + mensagem + "&name=" + nome);
+        ajax.send("msg=" + mensagem + "&name=" + nome + "&qtdMensagens=" + qtdMensagens);
     }
 }
 

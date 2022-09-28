@@ -1,6 +1,8 @@
 <?php
 
     $msg = $_POST["msg"];
+    $qtdMensagens = $_POST["qtdMensagens"];
+    $hora = date("H:i");
 
     if (isset ($_POST["msg"])){
         if ($_POST["msg"] != ""){
@@ -10,7 +12,13 @@
                 $name = "Sem Nome";
             }
             $fp = fopen("mensagens.txt", "a");
-            fwrite($fp, $name. " - Enviou: ". $_POST["msg"]. "\n");
+            
+            $c = 0;
+            while ($c <= $qtdMensagens) {
+                fwrite($fp, "<div class='messages'> <p class='username'>". $name. "</p>". "<p class='mensagem'>". $_POST["msg"]. "<span>". $hora. "</span>". "</p>". "</div> \n");
+                $c++;
+            }
+
             fclose($fp);
         }
     }
