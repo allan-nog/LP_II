@@ -2,7 +2,8 @@
 
     $msg = $_POST["msg"];
     $qtdMensagens = $_POST["qtdMensagens"];
-    $hora = date("H:i");
+    date_default_timezone_set('America/Sao_Paulo');
+    $hora = date('H:i', time()); 
 
     if (isset ($_POST["msg"])){
         if ($_POST["msg"] != ""){
