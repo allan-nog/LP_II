@@ -1,18 +1,18 @@
 <?php
 
-    //Checa se o parametro msg foi enviado por GET
-    if (isset ($_GET["msg"])){
-        if ($_GET["msg"] != ""){
-            if ($_GET["name"] != ""){
-                $name = $_GET["name"];
+    $msg = $_POST["msg"];
+
+    if (isset ($_POST["msg"])){
+        if ($_POST["msg"] != ""){
+            if ($_POST["name"] != ""){
+                $name = $_POST["name"];
             } else {
                 $name = "Sem Nome";
             }
             $fp = fopen("mensagens.txt", "a");
-            fwrite($fp, $name. " - Enviou: ". $_GET["msg"]. "\n");
+            fwrite($fp, $name. " - Enviou: ". $_POST["msg"]. "\n");
             fclose($fp);
         }
-        
     }
 
 ?>

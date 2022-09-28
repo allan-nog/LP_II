@@ -9,6 +9,8 @@
 
     <title> Chat </title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
     <style>
 
         body{
@@ -36,21 +38,64 @@
             font-size: 1rem;
         }
 
+        input[type="text"]{
+            margin-bottom: 0;
+        }
+
+        h3{
+            margin-top: 0;
+        }
+
+        main{
+            display: flex;
+        }
+
+        .container{
+            padding: 10px;
+        }
+        
+        .containerOne{
+            border-right: 1px solid gray;
+        }
+
+        .error{
+            color: red;
+        }
+
     </style>
 
 </head>
 
 <body>
 
-    <div id="content"> Conteúdo a Ser Alterado </div>
+    <main>
 
-    <label for="name"> Nome: </label>
-    <input type="text" id="name" placeholder="Digite Seu Nome">
+        <div class="container containerOne">
+    
+            <form>
 
-    <label for="mensage"> Mensagem: </label>
-    <input type="text" id="mensage" placeholder="Mensagem">
+                <label for="name"> Nome: </label>
+                <input type="text" id="name" placeholder="Digite Seu Nome">
+        
+                <label for="mensage"> Mensagem: <span> *</span> </label>
+                <input type="text" id="mensage" placeholder="Mensagem">
+                <span id="error">  </span>
+        
+                <button onclick="gravarViaAjax()"> Enviar Dados </button>
 
-    <button onclick="gravarViaAjax()"> Enviar Dados </button>
+            </form>
+
+        </div>
+
+        <div class="container">
+
+            <h3> Mensagens: </h3>
+
+            <p id="content"> </p>
+    
+        </div>
+    
+    </main>
 
     <script src="script.js"></script>
 

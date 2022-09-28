@@ -1,11 +1,11 @@
-//funcao para buscar dados de maneira assÃ­ncrona
+//funcao para buscar dados de maneira assí­ncrona
 function buscarViaAjax(){
 
     var ajax = new XMLHttpRequest();
 
     ajax.onreadystatechange = function(){
 
-        if( ajax.readyState == 4 ){
+        if (ajax.readyState == 4 ){
             document.getElementById("content").innerHTML = ajax.responseText;
         }
 
@@ -13,26 +13,30 @@ function buscarViaAjax(){
 
     ajax.open("GET", "lerArquivo.php");
     ajax.send();
-
 }
 
-setInterval( buscarViaAjax, 500);
+setInterval(buscarViaAjax, 100);
 
 //funcao para gravar dados de maneira assí­ncrona
 function gravarViaAjax(){
-    // Conteudo do campo de mensagem eh armazenado na variavel 'texto'
-    texto = document.getElementById("mensage").value;
-    nome = document.getElementById("name").value;
-    
-    // Limpa o campo da mensagem
-    document.getElementById("mensage").value = "";
-    document.getElementById("name").value = "";
 
-    var ajax = new XMLHttpRequest();
+    mensagem = document.getElementById("mensage").value;
+    nome = document.getElementById("name").value; 
 
-    // Concatena o conteudo da variavel 'texto' na chamada GET
-    ajax.open("GET", "gravarArquivo.php?msg=" + texto + "&name=" + nome);
-    ajax.send();
+    if (mensagem == ""){
+        document.getElementById("error").innerHTML = "Preencha a Mensagem";
+    } else {
+
+        // Limpa o campo da mensagem
+        document.getElementById("mensage").value = "";
+        document.getElementById("name").value = "";
+
+        var ajax = new XMLHttpRequest();
+
+        ajax.open("POST", "gravarArquivo.php");
+        ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        ajax.send("msg=" + mensagem + "&name=" + nome);
+    }
 }
 
 var inputMensage = document.getElementById("mensage");
