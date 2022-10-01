@@ -46,6 +46,7 @@ function gravarViaAjax(){
 
         var ajax = new XMLHttpRequest();
 
+
         ajax.open("POST", "gravarArquivo.php");
         ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         ajax.send("msg=" + mensagem + "&name=" + nome + "&qtdMensagens=" + qtdMensagens);

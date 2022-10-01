@@ -16,6 +16,7 @@ button{
     display: block;
     margin: 10px 0;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 input{
@@ -25,9 +26,13 @@ input{
     padding: 5px;
     font-family: 'Poppins', sans-serif;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 1rem;
     border-radius: 8px;
+}
+
+input#mensage{
+    margin-bottom: 0;
 }
 
 h3{
@@ -52,7 +57,7 @@ main{
     padding: 25px;
     border-radius: 8px;
     background-color: #FFF;
-    max-height: 200px;
+    max-height: 220px;
 }
 
 .containerTwo{
@@ -61,6 +66,7 @@ main{
     padding: 25px;
     border-radius: 8px;
     background-color: #FFF;
+    /* background: url('../../imagens/img_riomaggiore.jpg'); */
     margin-left: 20px;
 }
 
