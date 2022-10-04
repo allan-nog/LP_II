@@ -36,7 +36,7 @@ function gravarViaAjax(){
     nome = document.getElementById("name").value; 
     
 
-    if (mensagem == ""){
+    if (mensagem === ""){
         document.getElementById("error").innerHTML = "Preencha a Mensagem";
     } else {
 

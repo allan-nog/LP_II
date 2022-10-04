@@ -10,7 +10,7 @@
             if ($_POST["name"] != ""){
                 $name = $_POST["name"];
             } else {
-                $name = "Sem Nome";
+                $name = "Anônimo";
             }
             $fp = fopen("mensagens.txt", "a");
             
