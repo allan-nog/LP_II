@@ -15,7 +15,7 @@ if ($conn -> connect_error) {
 // Create database
 $sql = "CREATE DATABASE aulamax7";
 if ($conn -> query($sql) === TRUE) {
-  echo "Database created successfully";
+  echo "Database created successfully <br>";
 } else {
   echo "Error creating database: " . $conn -> error;
 }
@@ -30,7 +30,7 @@ $sql = "CREATE TABLE `aulamax7`.`login` (
 )";
   
 if ($conn->query($sql) === TRUE) {
-  echo "Table Login created successfully";
+  echo "Table Login created successfully <br>";
 } else {
   echo "Error creating table: " . $conn->error;
 }
