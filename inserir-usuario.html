@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Formulário </title>
+
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        form{
+            margin: 10px 0 0 20px;
+        }
+
+        .button{
+            padding: 10px 30px;
+            background-color: dodgerblue;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            display: block;
+            margin: 10px 0;
+        }
+
+        input{
+            margin-bottom: 10px;
+        }
+
+        label{
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <form action="inserir-usuario.php" method="post">
+
+        <label for="nome"> Nome: </label>
+        <input type="text" name="nome" id="nome">
+
+        <label for="email"> E-mail: </label>
+        <input type="email" name="email" id="email">
+
+        <label for="senha"> Senha: </label>
+        <input type="password" name="senha" id="senha">
+
+        <input type="submit" name="enviar" value="Cadastrar" class="button">
+        
+    </form>
+
+</body>
+
+</html>

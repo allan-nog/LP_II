@@ -26,8 +26,6 @@
 
 <body onload="document.getElementById('id01').style.display='block'">
 
-    
-
     <div class="w3-container">
 
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large"> Login </button>
@@ -37,12 +35,10 @@
         
             <div class="w3-center"> <br>
                 <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-                <img src="imagens/Flamengo.jpg" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+                <img src="imagens-avatar/avatar2.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
             </div>
 
             <form action="verificaLogin.php" method="POST" class="w3-container">
-
-            
 
                 <div class="w3-section">
                 <p class="erro">
@@ -57,13 +53,14 @@
                     }
                 ?>
             </p>
-                <label for="usuario"> <b>Username</b> </label>
-                <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usuario" id="usuario" required>
+                <label for="email"> <b>Username</b> </label>
+                <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="email" id="email" required>
                 
                 <label for="senha"> <b>Password</b> </label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="senha" id="senha" required>
+                <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="senha" id="senha" required>
                 
-                <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit"> Login </button>
+                <input type="submit" name="enviar" value="Login" class="w3-button w3-block w3-green w3-section w3-padding">
+
                 <input class="w3-check w3-margin-top" type="checkbox" checked="checked" name="lembrar" value="S"> Remember me
                 
             </div>
@@ -72,7 +69,7 @@
 
             <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
                 <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
-                <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+                <span class="w3-right w3-padding w3-hide-small"> Esqueceu a <a href="#"> senha? </a></span>
             </div>
 
             </div>
