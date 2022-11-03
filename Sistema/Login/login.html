@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title> Login & Registration Form </title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+
+                <form action="#" method="get">
+
+                    <div class="input-field">
+                        <input type="email" placeholder="Entre com seu email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Entre com sua senha" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text"> Me lembrar </label>
+                        </div>
+                        
+                        <a href="#" class="text"> Esqueceu sua senha? </a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text"> Não tem Login?
+                        <a href="#" class="text signup-link"> Increva-se agora </a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title"> Registrar </span>
+
+                <form action="#" method="get">
+                    <div class="field">
+                        <div class="input-field">
+                            <input type="text" placeholder="Entre com seu nome" required>
+                            <i class="uil uil-user"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="field email-field">
+                        <div class="input-field">
+                            <input type="text" placeholder="Entre com seu email" class="email" required>
+                            <i class="uil uil-envelope icon"></i>
+                        </div>
+                        <!-- <span class="error email-error">
+                            <i class="bx bx-error-circle error-icon"></i>
+                            <p class="error-text">Please enter a valid email</p>
+                        </span> -->
+                    </div>
+                    
+                    <div class="field create-password">
+                        <div class="input-field">
+                            <input type="password" class="password pPassword" placeholder="Crie sua senha" required>
+                            <i class="uil uil-lock icon"></i>
+                        </div>
+                        <!-- <span class="error password-error">
+                            <i class="bx bx-error-circle error-icon"></i>
+                            <p class="error-text"> Please enter atleast 8 charatcer with number, symbol, small and capital letter </p>
+                        </span> -->
+                    </div>
+
+                    <div class="field confirm-password">
+                        <div class="input-field">
+                            <input type="password" class="password cPassword" placeholder="Confirme sua senha" required>
+                            <i class="uil uil-lock icon"></i>
+                            <i class="uil uil-eye-slash showHidePw"></i>
+                        </div>
+                        <!-- <span class="error cPassword-error">
+                            <i class="bx bx-error-circle error-icon"></i>
+                            <p class="error-text"> Password don't match </p>
+                        </span> -->
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Inscreva-se">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text"> Já tem Login?
+                        <a href="#" class="text login-link"> Entre </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
