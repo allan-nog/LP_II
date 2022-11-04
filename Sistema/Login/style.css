@@ -96,52 +96,7 @@ body{
     transition: all 0.2s ease;
 }
 
-
-
-/* .invalid input {
-    border-color: #d93025;
-}
-
-.field .error {
-    display: flex;
-    align-items: center;
-    margin-top: 6px;
-    color: #d93025;
-    font-size: 13px;
-    display: none;
-}
-.invalid .error {
-    display: flex;
-}
-.error .error-icon {
-    margin-right: 6px;
-    font-size: 15px;
-}
-.create-password .error {
-    align-items: flex-start;
-}
-.create-password .error-icon {
-    margin-top: 4px;
-}
-.button {
-    margin: 25px 0 6px;
-}
-.button input {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 400;
-    background-color: #4070f4;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.button input:hover {
-    background-color: #0e4bf1;
-} */
-
-
-
-
-.input-field input:is(:focus, :valid){
+.input-field input:is(:focus){
     border-bottom-color: #4070f4;
 }
 
@@ -154,7 +109,7 @@ body{
     transition: all 0.2s ease;
 }
 
-.input-field input:is(:focus, :valid) ~ i{
+.input-field input:is(:focus) ~ i{
     color: #4070f4;
 }
 

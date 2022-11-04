@@ -22,19 +22,18 @@
             <div class="form login">
                 <span class="title">Login</span>
 
-                <form action="#" method="get">
+                <form action="teste.php" method="get">
 
                     <div class="input-field">
-                        <input type="email" placeholder="Entre com seu email" required>
+                        <input type="email" name="email" id="iemail" placeholder="Entre com seu email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
 
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Entre com sua senha" required>
+                        <input type="password" name="password" name="ipassword" class="password" placeholder="Entre com sua senha" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
-
 
                     <div class="checkbox-text">
                         <div class="checkbox-content">
@@ -61,51 +60,33 @@
             <div class="form signup">
                 <span class="title"> Registrar </span>
 
-                <form action="#" method="get">
-                    <div class="field">
-                        <div class="input-field">
-                            <input type="text" placeholder="Entre com seu nome" required>
-                            <i class="uil uil-user"></i>
-                        </div>
+                <form action="teste.php" method="get">
+
+                    <div class="input-field">
+                        <input type="text" name="name" id="iname" placeholder="Entre com seu nome" required>
+                        <i class="uil uil-user"></i>
                     </div>
                     
-                    <div class="field email-field">
-                        <div class="input-field">
-                            <input type="email" placeholder="Entre com seu email" class="email" required>
-                            <i class="uil uil-envelope icon"></i>
-                        </div>
-                        <!-- <span class="error email-error">
-                            <i class="bx bx-error-circle error-icon"></i>
-                            <p class="error-text">Please enter a valid email</p>
-                        </span> -->
+                    <div class="input-field">
+                        <input type="email" name="cEmail" id="iCEmail" placeholder="Entre com seu email" required>
+                        <i class="uil uil-envelope icon"></i>
                     </div>
                     
-                    <div class="field create-password">
-                        <div class="input-field">
-                            <input type="password" class="password pPassword" placeholder="Crie sua senha" required>
-                            <i class="uil uil-lock icon"></i>
-                        </div>
-                        <!-- <span class="error password-error">
-                            <i class="bx bx-error-circle error-icon"></i>
-                            <p class="error-text"> Please enter atleast 8 charatcer with number, symbol, small and capital letter </p>
-                        </span> -->
+                    <div class="input-field">
+                        <input type="password" name="cPassword" id="iCPassword" class="password" placeholder="Crie sua senha" required>
+                        <i class="uil uil-lock icon"></i>
                     </div>
 
-                    <div class="field confirm-password">
-                        <div class="input-field">
-                            <input type="password" class="password cPassword" placeholder="Confirme sua senha" required>
-                            <i class="uil uil-lock icon"></i>
-                            <i class="uil uil-eye-slash showHidePw"></i>
-                        </div>
-                        <!-- <span class="error cPassword-error">
-                            <i class="bx bx-error-circle error-icon"></i>
-                            <p class="error-text"> Password don't match </p>
-                        </span> -->
+                    <div class="input-field">
+                        <input type="password" name="cCPassword" id="iCCPassword" class="password" placeholder="Confirme sua senha" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
                     <div class="input-field button">
                         <input type="submit" value="Inscreva-se">
                     </div>
+
                 </form>
 
                 <div class="login-signup">

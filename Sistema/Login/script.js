@@ -32,3 +32,11 @@ signUp.addEventListener("click", ( )=>{
 login.addEventListener("click", ( )=>{
   container.classList.remove("active");
 });
+
+// const form = document.querySelector("form"),
+//   emailField = form.querySelector(".email-field"),
+//   emailInput = document.querySelector(".input-field .email"),
+//   passField = form.querySelector(".create-password"),
+//   passInput = document.querySelector(".input-field .pPassword"),
+//   cPassField = form.querySelector(".confirm-password"),
+//   cPassInput = document.querySelector(".input-field .cPassword");
