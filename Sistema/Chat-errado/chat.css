@@ -67,8 +67,6 @@ main{
     border-radius: 8px;
     background-color: #FFF;
     margin-left: 20px;
-    height: 100vh;
-    overflow-y: scroll;
 }
 
 .messages{

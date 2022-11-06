@@ -34,7 +34,7 @@
                 $_SESSION["usuario"] = $email;
                 $_SESSION["autenticado"] = true;
 
-                header("Location: ../Chat/chat.html");
+                header("Location: ..\Chat\chat.html");
             } else {
                 header("Location: login.html?erro=1");
             }
