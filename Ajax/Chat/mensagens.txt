@@ -1,2 +1,0 @@
-<div class='messages'> <p class='username'>teste</p><p class='mensagem'>teste<span>08:31</span></p></div> 
-<div class='messages'> <p class='username'>teste</p><p class='mensagem'>teste<span>08:31</span></p></div> 

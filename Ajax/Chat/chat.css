@@ -66,8 +66,9 @@ main{
     padding: 25px;
     border-radius: 8px;
     background-color: #FFF;
-    /* background: url('../../imagens/img_riomaggiore.jpg'); */
     margin-left: 20px;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .messages{
