@@ -4,7 +4,6 @@ const container = document.querySelector(".container"),
       signUp = document.querySelector(".signup-link"),
       login = document.querySelector(".login-link");
 
-//   js code to show/hide password and change icon
 pwShowHide.forEach(eyeIcon =>{
   eyeIcon.addEventListener("click", ()=>{
       pwFields.forEach(pwField =>{
@@ -33,10 +32,4 @@ login.addEventListener("click", ( )=>{
   container.classList.remove("active");
 });
 
-// const form = document.querySelector("form"),
-//   emailField = form.querySelector(".email-field"),
-//   emailInput = document.querySelector(".input-field .email"),
-//   passField = form.querySelector(".create-password"),
-//   passInput = document.querySelector(".input-field .pPassword"),
-//   cPassField = form.querySelector(".confirm-password"),
-//   cPassInput = document.querySelector(".input-field .cPassword");
+

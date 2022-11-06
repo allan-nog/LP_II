@@ -22,7 +22,7 @@
             <div class="form login">
                 <span class="title">Login</span>
 
-                <form action="teste.php" method="get">
+                <form action="verificaLogin.php" method="post" autocomplete="off">
 
                     <div class="input-field">
                         <input type="email" name="email" id="iemail" placeholder="Entre com seu email" required>
@@ -60,7 +60,7 @@
             <div class="form signup">
                 <span class="title"> Registrar </span>
 
-                <form action="teste.php" method="get">
+                <form action="inserirUsuario.php" method="post">
 
                     <div class="input-field">
                         <input type="text" name="name" id="iname" placeholder="Entre com seu nome" required>
@@ -73,18 +73,18 @@
                     </div>
                     
                     <div class="input-field">
-                        <input type="password" name="cPassword" id="iCPassword" class="password" placeholder="Crie sua senha" required>
+                        <input type="password" name="createPassword" id="iCreatePassword" class="password" placeholder="Crie sua senha" required>
                         <i class="uil uil-lock icon"></i>
                     </div>
 
                     <div class="input-field">
-                        <input type="password" name="cCPassword" id="iCCPassword" class="password" placeholder="Confirme sua senha" required>
+                        <input type="password" name="confirmPassword" id="iConfirmPassword" class="password" placeholder="Confirme sua senha" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
                     <div class="input-field button">
-                        <input type="submit" value="Inscreva-se">
+                        <input type="submit" name="enviar" value="Inscreva-se">
                     </div>
 
                 </form>
@@ -94,6 +94,7 @@
                         <a href="#" class="text login-link"> Entre </a>
                     </span>
                 </div>
+
             </div>
         </div>
     </div>

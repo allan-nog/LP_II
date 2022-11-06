@@ -116,6 +116,7 @@ body{
 .input-field i.icon{
     left: 0;
 }
+
 .input-field i.showHidePw{
     right: 0;
     cursor: pointer;
