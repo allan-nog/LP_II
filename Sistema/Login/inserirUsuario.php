@@ -9,7 +9,7 @@
     if (isset($_POST["enviar"])){
 
         // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);// Check connection
+        $conn = new mysqli($servername, $username, $password, $dbname); // Check connection
         if ($conn -> connect_error) {
             die("Connection failed: " . $conn -> connect_error);
         }
@@ -20,7 +20,7 @@
         
         // set parameters and execute
         $nome = $_POST["name"];
-        $email = $_POST["cEmail"];
+        $email = $_POST["createEmail"];
         $senha = password_hash($_POST["createPassword"], PASSWORD_DEFAULT);
         $stmt -> execute();
     
