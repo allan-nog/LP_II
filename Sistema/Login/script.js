@@ -32,25 +32,12 @@ login.addEventListener("click", ( )=>{
   container.classList.remove("active");
 });
 
-// const form = document.getElementById("form2"),
-//   emailField = document.querySelector(".email-field"),
-//   emailInput = document.querySelector(".email");
-
-
-//   passField = document.querySelector(".create-password"),
-//   passInput = document.querySelector(".pPassword"),
-//   cPassField = document.querySelector(".confirm-password"),
-//   cPassInput = document.querySelector(".cPassword");
-
 const form = document.getElementById("form2"),
-    // emailField = form.querySelector(".email-field"),
     emailField = document.getElementById("teste"),
     emailInput = document.querySelector(".email"),
     passField = document.querySelector(".create-password"),
-    // passInput = document.querySelector(".pPassword"),
-    passInput = document.getElementById("iCreatePassword"),
+    passInput = document.getElementById(".iCreatePassword"),
     cPassField = document.querySelector(".confirm-password"),
-    // cPassInput = document.querySelector(".cPassword");
     cPassInput = document.getElementById("iConfirmPassword");
 
 
