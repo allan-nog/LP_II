@@ -33,8 +33,8 @@ login.addEventListener("click", ( )=>{
 });
 
 const form = document.getElementById("form2"),
-    emailField = document.getElementById("teste"),
-    emailInput = document.querySelector(".email"),
+    emailField = document.querySelector(".email-field"),
+    emailInput = document.querySelector(".createEmail"),
     passField = document.querySelector(".create-password"),
     passInput = document.getElementById(".iCreatePassword"),
     cPassField = document.querySelector(".confirm-password"),
@@ -90,5 +90,3 @@ form.addEventListener("submit", (e) => {
     location.href = form.getAttribute("action");
   }
 });
-
-
