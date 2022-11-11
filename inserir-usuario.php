@@ -3,7 +3,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "sistema";
+    $dbname = "aulamax";
 
     
     if (isset($_POST["enviar"])){
