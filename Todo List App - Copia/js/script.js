@@ -1,60 +1,110 @@
 //Getting all required elements
 const inputField = document.querySelector(".input-field textarea"),
-  todoLists = document.querySelector(".todoLists"),
+  filters = document.querySelectorAll(".filters span"),
+  taskBox = document.querySelector(".todoLists"),
   pendingNum = document.querySelector(".pending-num"),
-  clearButton = document.querySelector(".clear-button");
+  clearAll = document.querySelector(".clear-button");
 
-//we will call this function while adding, deleting and checking-unchecking the task
-function allTasks() {
-  let tasks = document.querySelectorAll(".pending");
+let editId,
+isEditTask = false,
+todos = JSON.parse(localStorage.getItem("todo-list"));
 
-  //if tasks' length is 0 then pending num text content will be no, if not then pending num value will be task's length
-  pendingNum.textContent = tasks.length === 0 ? "no" : tasks.length;
-
-  let allLists = document.querySelectorAll(".list");
-  if (allLists.length > 0) {
-    todoLists.style.marginTop = "20px";
-    clearButton.style.pointerEvents = "auto";
-    return;
-  }
-  todoLists.style.marginTop = "0px";
-  clearButton.style.pointerEvents = "none";
-}
-
-//add task while we put value in text area and press enter
-inputField.addEventListener("keyup", (e) => {
-  let inputVal = inputField.value.trim(); //trim fuction removes space of front and back of the inputed value
-
-  //if enter button is clicked and inputed value length is greated than 0.
-  if (e.key === "Enter" && inputVal.length > 0) {
-    let liTag = ` <li class="list pending" onclick="handleStatus(this)">
-          <input type="checkbox" />
-          <span class="task">${inputVal}</span>
-          <i class="uil uil-trash" onclick="deleteTask(this)"></i>
-        </li>`;
-
-    todoLists.insertAdjacentHTML("beforeend", liTag); //inserting li tag inside the todolist div
-    inputField.value = ""; //removing value from input field
-    allTasks();
-  }
+filters.forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector("span.active").classList.remove("active");
+        btn.classList.add("active");
+        showTodo(btn.id);
+    });
 });
 
-//checking and unchecking the chekbox while we click on the task
-function handleStatus(e) {
-  const checkbox = e.querySelector("input"); //getting checkbox
-  checkbox.checked = checkbox.checked ? false : true;
-  e.classList.toggle("pending");
-  allTasks();
+function showTodo(filter) {
+    let liTag = "";
+    if(todos) {
+        todos.forEach((todo, id) => {
+            let completed = todo.status == "completed" ? "checked" : "";
+            if(filter == todo.status || filter == "all") {
+                liTag += `<li class="task">
+                            <label for="${id}">
+                                <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${completed}>
+                                <p class="${completed}">${todo.name}</p>
+                            </label>
+                            <div class="settings">
+                                <i onclick="showMenu(this)" class="uil uil-ellipsis-h menu"></i>
+                                <ul class="task-menu">
+                                    <li onclick='editTask(${id}, "${todo.name}")'><i class="uil uil-pen"></i>Edit</li>
+                                    <li onclick='deleteTask(${id}, "${filter}")'><i class="uil uil-trash"></i>Delete</li>
+                                </ul>
+                            </div>
+                        </li>`;
+            }
+        });
+    }
+    taskBox.innerHTML = liTag || `<span class="not-tasks"> Você não tem tarefas aqui </span>`;
+    let checkTask = taskBox.querySelectorAll(".task");
+    !checkTask.length ? clearAll.classList.remove("active") : clearAll.classList.add("active");
+    taskBox.offsetHeight >= 300 ? taskBox.classList.add("overflow") : taskBox.classList.remove("overflow");
+}
+showTodo("all");
+
+function showMenu(selectedTask) {
+    let menuDiv = selectedTask.parentElement.lastElementChild;
+    menuDiv.classList.add("show");
+    document.addEventListener("click", e => {
+        if(e.target.tagName != "I" || e.target != selectedTask) {
+            menuDiv.classList.remove("show");
+        }
+    });
 }
 
-//deleting task while we click on the delete icon.
-function deleteTask(e) {
-  e.parentElement.remove(); //getting parent element and remove it
-  allTasks();
+function updateStatus(selectedTask) {
+    let taskName = selectedTask.parentElement.lastElementChild;
+    if(selectedTask.checked) {
+        taskName.classList.add("checked");
+        todos[selectedTask.id].status = "completed";
+    } else {
+        taskName.classList.remove("checked");
+        todos[selectedTask.id].status = "pending";
+    }
+    localStorage.setItem("todo-list", JSON.stringify(todos))
 }
 
-//deleting all the tasks while we click on the clear button.
-clearButton.addEventListener("click", () => {
-  todoLists.innerHTML = "";
-  allTasks();
+function editTask(taskId, textName) {
+    editId = taskId;
+    isEditTask = true;
+    inputField.value = textName;
+    inputField.focus();
+    inputField.classList.add("active");
+}
+
+function deleteTask(deleteId, filter) {
+    isEditTask = false;
+    todos.splice(deleteId, 1);
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+    showTodo(filter);
+}
+
+clearAll.addEventListener("click", () => {
+    isEditTask = false;
+    todos.splice(0, todos.length);
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+    showTodo()
 });
+
+inputField.addEventListener("keyup", e => {
+    let userTask = inputField.value.trim();
+    if(e.key == "Enter" && userTask) {
+        if(!isEditTask) {
+            todos = !todos ? [] : todos;
+            let taskInfo = {name: userTask, status: "pending"};
+            todos.push(taskInfo);
+        } else {
+            isEditTask = false;
+            todos[editId].name = userTask;
+        }
+        inputField.value = "";
+        localStorage.setItem("todo-list", JSON.stringify(todos));
+        showTodo(document.querySelector("span.active").id);
+    }
+});
+
+

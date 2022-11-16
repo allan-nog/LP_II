@@ -1,4 +1,4 @@
-const taskInput = document.querySelector(".task-input input"),
+const inputField = document.querySelector(".task-input input"),
 filters = document.querySelectorAll(".filters span"),
 clearAll = document.querySelector(".clear-btn"),
 taskBox = document.querySelector(".task-box");
@@ -69,9 +69,9 @@ function updateStatus(selectedTask) {
 function editTask(taskId, textName) {
     editId = taskId;
     isEditTask = true;
-    taskInput.value = textName;
-    taskInput.focus();
-    taskInput.classList.add("active");
+    inputField.value = textName;
+    inputField.focus();
+    inputField.classList.add("active");
 }
 
 function deleteTask(deleteId, filter) {
@@ -88,8 +88,8 @@ clearAll.addEventListener("click", () => {
     showTodo()
 });
 
-taskInput.addEventListener("keyup", e => {
-    let userTask = taskInput.value.trim();
+inputField.addEventListener("keyup", e => {
+    let userTask = inputField.value.trim();
     if(e.key == "Enter" && userTask) {
         if(!isEditTask) {
             todos = !todos ? [] : todos;
@@ -99,7 +99,7 @@ taskInput.addEventListener("keyup", e => {
             isEditTask = false;
             todos[editId].name = userTask;
         }
-        taskInput.value = "";
+        inputField.value = "";
         localStorage.setItem("todo-list", JSON.stringify(todos));
         showTodo(document.querySelector("span.active").id);
     }
