@@ -60,48 +60,27 @@
             <div class="form signup">
                 <span class="title"> Registrar </span>
 
-                <form action="inserirUsuario.php" method="post" id="form2">
+                <form action="inserirUsuario.php" method="post">
 
                     <div class="input-field">
                         <input type="text" name="name" id="iname" placeholder="Entre com seu nome" required>
                         <i class="uil uil-user"></i>
                     </div>
                     
-                    <div class="field email-field">
-                        <div class="input-field email-field">
-                            <input type="email" name="cEmail" id="iCEmail" class="email" placeholder="Entre com seu email">
-                            <i class="uil uil-envelope icon"></i>
-                        </div>
-                        <span class="error email-error">
-                            <i class="bx bx-error-circle error-icon"></i>
-                            <p class="error-text">Please enter a valid email</p>
-                        </span>
+                    <div class="input-field">
+                        <input type="email" name="cEmail" id="iCEmail" placeholder="Entre com seu email" required>
+                        <i class="uil uil-envelope icon"></i>
                     </div>
                     
-                    <div class="field create-password">
-                        <div class="input-field create-password">
-                            <input type="password" name="createPassword" id="iCreatePassword" class="password pPassword" placeholder="Crie sua senha">
-                            <i class="uil uil-lock icon"></i>
-                        </div>
-                        <span class="error password-error">
-                            <i class="bx bx-error-circle error-icon"></i>
-                            <p class="error-text">
-                              Please enter atleast 8 charatcer with number, symbol, small and
-                              capital letter.
-                            </p>
-                        </span>
+                    <div class="input-field">
+                        <input type="password" name="createPassword" id="iCreatePassword" class="password" placeholder="Crie sua senha" required>
+                        <i class="uil uil-lock icon"></i>
                     </div>
 
-                    <div class="field confirm-password">
-                        <div class="input-field confirm-password">
-                            <input type="password" name="confirmPassword" id="iConfirmPassword" class="password cPassword" placeholder="Confirme sua senha">
-                            <i class="uil uil-lock icon"></i>
-                            <i class="uil uil-eye-slash showHidePw"></i>
-                        </div>
-                        <span class="error cPassword-error">
-                            <i class="bx bx-error-circle error-icon"></i>
-                            <p class="error-text">Password don't match</p>
-                        </span>
+                    <div class="input-field">
+                        <input type="password" name="confirmPassword" id="iConfirmPassword" class="password" placeholder="Confirme sua senha" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
                     <div class="input-field button">
