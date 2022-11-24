@@ -1,5 +1,13 @@
+<?php
+
+    session_start();
+    if (!isset($_SESSION["autenticado"]) || !isset($_SESSION["usuario"])){
+        header("Location: Login/login.html?erro=2");
+    }
+
+?>
+
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -35,8 +43,8 @@
       <ul class="todoLists"></ul>
 
       <div class="pending-tasks">
-        <!-- <span> Você tem <span class="pending-num"> não </span> tarefas pendentes. </span> -->
         <button class="clear-button"> Limpar Tudo </button>
+        <!-- <a href="Login/logoff.php"> Sair </a> -->
       </div>
     </div>
 
