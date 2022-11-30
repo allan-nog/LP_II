@@ -5,7 +5,7 @@
     $password = "";
     $dbname = "sistema";
     
-    if (isset($_POST["tarefa"])){
+    if (isset($_POST["task-description"])){
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);// Check connection
@@ -18,7 +18,7 @@
         $stmt -> bind_param("s", $tarefa);
         
         // set parameters and execute
-        $tarefa = $_POST["tarefa"];
+        $tarefa = $_POST["task-description"];
         $stmt -> execute();
     
         echo "New records created successfully";
