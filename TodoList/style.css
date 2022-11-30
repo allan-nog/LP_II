@@ -20,13 +20,18 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+.prazo {
+  padding: 20px 0;
+  border-bottom: 1px solid #CCC;
+}
+
 .container .input-field {
   position: relative;
   height: 64px;
   width: 100%;
 }
 
-.input-field textarea {
+.input-field input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -35,15 +40,48 @@ body {
   border-radius: 8px;
   padding: 18px 45px 18px 53px;
   border: 1px solid #ccc;
-  resize: none;
 }
 
-.input-field textarea:focus {
+.input-field input:focus {
   border-color: #4070f4;
 }
 
-textarea::-webkit-scrollbar {
+input::-webkit-scrollbar {
   display: none;
+}
+
+input[type="date"]{
+  background-color: #0080ff;
+  padding: 5px;
+  color: #ffffff;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator{
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.button {
+  padding: 8px 14px;
+  outline: none;
+  border: none;
+  background-color: #4070f4;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: 140px;
+}
+
+.button:hover {
+  background-color: #0e4bf1;
 }
 
 .input-field .note-icon {
@@ -56,7 +94,7 @@ textarea::-webkit-scrollbar {
   color: #707070;
 }
 
-.input-field textarea:focus ~ .note-icon {
+.input-field input:focus ~ .note-icon {
   color: #4070f4;
 }
 
@@ -79,7 +117,7 @@ textarea::-webkit-scrollbar {
   position: relative;
 }
 
-.todoLists .task input {
+.todoLists .task input[type="checkbox"] {
   height: 16px;
   min-width: 16px;
   accent-color: #4070f4;
@@ -91,7 +129,7 @@ textarea::-webkit-scrollbar {
   word-break: break-all;
 }
 
-.task input:checked ~ .name-task {
+.task input[type="checkbox"]:checked ~ .name-task {
   text-decoration: line-through;
 }
 
@@ -221,7 +259,7 @@ textarea::-webkit-scrollbar {
   align-items: center;
 }
 
-.task label input{
+.task label input[type="checkbox"]{
   accent-color: #3C87FF;
 }
 

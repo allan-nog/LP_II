@@ -4,9 +4,8 @@
     $username = "root";
     $password = "";
     $dbname = "sistema";
-
     
-    if (isset($_POST["enviar"])){
+    if (isset($_POST["task-description"])){
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);// Check connection
@@ -15,13 +14,12 @@
         }
 
         // prepare and bind
-        $stmt = $conn -> prepare("INSERT INTO usuarios (nome, email, senha) VALUES(?, ?, ?)");
-        $stmt -> bind_param("sss", $nome, $email, $senha);
+        $stmt = $conn -> prepare("INSERT INTO tarefas (tarefa, prazo) VALUES(?, ?)");
+        $stmt -> bind_param("ss", $tarefa, $prazo);
         
         // set parameters and execute
-        $nome = $_POST["name"];
-        $email = $_POST["cEmail"];
-        $senha = password_hash($_POST["createPassword"], PASSWORD_DEFAULT);
+        $tarefa = $_POST["task-description"];
+        $prazo = $_POST["prazo"];
         $stmt -> execute();
     
         echo "New records created successfully";
@@ -29,7 +27,7 @@
         $stmt -> close();
         $conn -> close();
 
-        header("Location: login.html");
+        header("Location: index.php");
     } else {
         echo "Valores não recebidos.";
     }

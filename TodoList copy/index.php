@@ -28,8 +28,7 @@
       <div class="input-field">
         <img src="bars-icon.svg" alt="icon">
         <form action="inserirTarefa.php" method="post">
-          <input type="text" placeholder="Nome da Tarefa" name="task-name">
-          <input type="text" placeholder="Descrição da Tarefa" name="task-description" id="task-description">
+          <input type="text" placeholder="Adicionar uma nova tarefa" name="task-description">
         </form>
         <i class="uil uil-notes note-icon"></i>
       </div>

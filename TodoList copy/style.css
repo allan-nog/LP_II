@@ -22,11 +22,11 @@ body {
 
 .container .input-field {
   position: relative;
-  /* height: 64px; */
+  height: 64px;
   width: 100%;
 }
 
-.input-field input#task-description {
+.input-field input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -35,14 +35,13 @@ body {
   border-radius: 8px;
   padding: 18px 45px 18px 53px;
   border: 1px solid #ccc;
-  resize: none;
 }
 
-.input-field input#task-description:focus {
+.input-field input:focus {
   border-color: #4070f4;
 }
 
-input#task-description::-webkit-scrollbar {
+input::-webkit-scrollbar {
   display: none;
 }
 
@@ -56,7 +55,7 @@ input#task-description::-webkit-scrollbar {
   color: #707070;
 }
 
-.input-field input#task-description:focus ~ .note-icon {
+.input-field input:focus ~ .note-icon {
   color: #4070f4;
 }
 

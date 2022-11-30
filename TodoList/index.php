@@ -18,20 +18,30 @@
 
     <title> Todo List </title>
 
-    <link rel="stylesheet" href="css/style.css" />
-
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
-    
+
   </head>
 
   <body>
 
     <div class="container">
-      <div class="input-field">
-        <img src="bars-icon.svg" alt="icon">
-        <textarea placeholder="Descrição da Tarefa"></textarea>
-        <i class="uil uil-notes note-icon"></i>
-      </div>
+
+      <form action="inserirTarefa.php" method="post">
+
+        <div class="input-field">
+          <img src="bars-icon.svg" alt="icon">
+            <input type="text" placeholder="Adicionar uma nova tarefa" name="task-description">
+          <i class="uil uil-notes note-icon"></i>
+        </div>
+
+        <div class="prazo">
+          <label for="prazo"> Prazo: </label>
+          <input type="date" name="prazo" id="prazo">
+          <!-- <input type="submit" value="Enviar" class="button"> -->
+        </div>
+
+      </form>
 
       <div class="controls">
         <div class="filters">
@@ -48,8 +58,7 @@
       </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 
   </body>
-
 </html>
