@@ -1,9 +1,10 @@
 //Getting all required elements
-const inputField = document.querySelector(".input-field textarea"),
+const inputField = document.querySelector(".input-field input"),
   filters = document.querySelectorAll(".filters span"),
   taskBox = document.querySelector(".todoLists"),
   pendingNum = document.querySelector(".pending-num"),
-  clearAll = document.querySelector(".clear-button");
+  clearAll = document.querySelector(".clear-button"),
+  form = document.querySelector(".container .form");
 
 let editId,
 isEditTask = false,
@@ -26,7 +27,7 @@ function showTodo(filter) {
                 liTag += `<li class="task">
                             <label for="${id}">
                                 <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${completed}>
-                                <p class="${completed}">${todo.name}</p>
+                                <p class="${completed}">${todo.name} </p>
                             </label>
                             <div class="settings">
                                 <i onclick="showMenu(this)" class="uil uil-ellipsis-h menu"></i>
@@ -90,7 +91,7 @@ clearAll.addEventListener("click", () => {
     showTodo()
 });
 
-inputField.addEventListener("keyup", e => {
+form.addEventListener("keyup", e => {
     let userTask = inputField.value.trim();
     if(e.key == "Enter" && userTask) {
         if(!isEditTask) {
@@ -106,5 +107,3 @@ inputField.addEventListener("keyup", e => {
         showTodo(document.querySelector("span.active").id);
     }
 });
-
-
