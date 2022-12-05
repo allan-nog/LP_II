@@ -1,0 +1,30 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+form{
+    font-size: 20px;
+}
+
+input,
+select{
+    padding: 6px;
+    font-size: 20px;
+}
+
+label{
+    display: block;
+    margin-top: 20px;
+}
+
+.button{
+    padding: 10px 30px;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    margin: 20px 0;
+}

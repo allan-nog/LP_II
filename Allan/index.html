@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Cadastro </title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <form action="insert.php" method="post">
+
+        <label for="name"> Cliente: </label>
+        <input type="text" name="name" id="iname" placeholder="Nome Completo">
+
+        <label for="tel"> Telefone: </label>
+        <input type="tel" name="tel" id="itel" placeholder="(xx) 0000 - 0000">
+
+        <label for="address"> Endereço: </label>
+        <input type="text" name="address" id="iaddress" placeholder="Rua/Avenida">
+
+        <label for="car"> Veículo: </label>
+        <select name="car" id="icar">
+            <option value="fiat"> Fiat </option>
+            <option value="ford"> Ford </option>
+            <option value="volks"> Volks </option>
+            <option value="toyota"> Toyota </option>
+        </select>
+        
+        <input type="submit" value="Cadastrar" name="enviar" class="button">
+
+    </form>
+
+</body>
+
+</html>
